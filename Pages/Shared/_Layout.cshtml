@@ -1,0 +1,73 @@
+﻿<html!DOCTYPE htdml>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Clippy</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/PracticaNetFramework.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+            <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #279d85;">
+            <div class="container-fluid">
+                <a class="navbar-brand me-2 mb-2 mb-lg-3" href="Index">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-paperclip" viewBox="0 0 16 16">
+                            <path d="M4.5 3a2.5 2.5 0 0 1 5 0v9a1.5 1.5 0 0 1-3 0V5a.5.5 0 0 1 1 0v7a.5.5 0 0 0 1 0V3a1.5 1.5 0 1 0-3 0v9a2.5 2.5 0 0 0 5 0V5a.5.5 0 0 1 1 0v7a3.5 3.5 0 1 1-7 0V3z" />
+                        </svg>Clippy
+                    </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar nav-tabs me-auto mb-2 mb-lg-3">
+                        <li class="nav-item">
+                                <a class="nav-link text-light" style="background-color: #279d85;" aria-current="page" href="Index">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                                <a class="nav-link text-light" style="background-color: #279d85;" aria-current="page" href="About_Us">Sobre Nosotros</a>
+                        </li>
+                            <li class="nav-item text-light" style="background-color: #279d85;">
+                                <a class="nav-link  text-light dropdown-toggle" href="Productos" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Productos
+                            </a>
+                                <ul class="dropdown-menu" style="background-color: #279d85;">
+                                <li><a class="dropdown-item text-black-50" href="#">Escritura</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item text-black-50" href="#">Escritorio</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item text-black-50" href="#">Papeleria</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled">Disabled</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control m-3" type="search" placeholder="Buscar" aria-label="Search">
+                        <button class="btn btn-outline-success m-3" type="submit">Buscar</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-secondary">
+        <div class="container">
+            &copy; LFA 2022 - PracticaNetFramework - <a asp-area="" asp-page="/Privacy">Privacidad</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
